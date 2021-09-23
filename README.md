@@ -1,2 +1,2 @@
 # mark14-stocks
- A webapp that calculates profit or loss for user's purchased stock 
+ A web app made using Vanilla JS which tells you how much profit or loss you are making on a purchased stock.
