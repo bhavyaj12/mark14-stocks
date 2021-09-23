@@ -5,13 +5,15 @@ const checkBtn = document.querySelector("#check-btn");
 const outputBox = document.querySelector("#output");
 
 function calculateProfitAndLoss(initial, quantity, current) {
-    if(current > initial) {
-        var profit = (current - initial) * quantity;
-        var profitPerc = Math.round((profit/initial) * 100);
+    var initVal = initial * quantity;
+    var currVal = current * quantity;
+    if(currVal > initVal) {
+        var profit = currVal - initVal;
+        var profitPerc = (profit/initVal) * 100;
         showOutput("🤑 Profit = " + profit + " 🤑 \n" + "🤑 Profit Percentage = " + profitPerc + "% 🤑", "PROFIT");
-    } else if(current < initial) {
-        var loss = (initial - current) * quantity;
-        var lossPerc = Math.round((loss/initial) * 100);
+    } else if(currVal < initVal) {
+        var loss = initVal - currVal;
+        var lossPerc = (loss/initVal) * 100;
 
         if(lossPerc > 50){
             document.body.style.backgroundColor ="black";

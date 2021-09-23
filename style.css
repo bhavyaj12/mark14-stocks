@@ -2,6 +2,10 @@ body, html {
     height: 100%;
     margin: 0px;
     text-align: center;
+}
+
+h1, label {
+    
     color: white;
 }
 
