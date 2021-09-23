@@ -13,6 +13,9 @@ function calculateProfitAndLoss(initial, quantity, current) {
         var loss = (initial - current) * quantity;
         var lossPerc = Math.round((loss/initial) * 100);
 
+        if(lossPerc > 50){
+            document.body.style.backgroundColor ="black";
+        }
         showOutput("😰 Loss = " + loss + " 😰 \n" + "😰 Loss Percentage = " + lossPerc + "% 😰", "LOSS");
     } else {
         showOutput("👍🏻 No pain no gain and no gain no pain, you neither made any profit nor any loss 👍🏻", "EQUAL");
