@@ -3,7 +3,6 @@ const stocksQuantity = document.querySelector("#quantity-stocks");
 const currPrice = document.querySelector("#curr-price");
 const checkBtn = document.querySelector("#check-btn");
 const outputBox = document.querySelector("#output");
-const containerBox = document.querySelector("#container");
 
 function calculateProfitAndLoss(initial, quantity, current) {
     if(current > initial) {
@@ -13,6 +12,7 @@ function calculateProfitAndLoss(initial, quantity, current) {
     } else if(current < initial) {
         var loss = (initial - current) * quantity;
         var lossPerc = Math.round((loss/initial) * 100);
+
         showOutput("😰 Loss = " + loss + " 😰 \n" + "😰 Loss Percentage = " + lossPerc + "% 😰", "LOSS");
     } else {
         showOutput("👍🏻 No pain no gain and no gain no pain, you neither made any profit nor any loss 👍🏻", "EQUAL");
