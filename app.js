@@ -3,18 +3,19 @@ const stocksQuantity = document.querySelector("#quantity-stocks");
 const currPrice = document.querySelector("#curr-price");
 const checkBtn = document.querySelector("#check-btn");
 const outputBox = document.querySelector("#output");
+const containerBox = document.querySelector("#container");
 
 function calculateProfitAndLoss(initial, quantity, current) {
     if(current > initial) {
         var profit = (current - initial) * quantity;
-        var profitPerc = (profit/initial) * 100;
-        showOutput("Profit = " + profit + "\n" + "Profit Percentage = " + profitPerc + "%", "PROFIT");
+        var profitPerc = Math.round((profit/initial) * 100);
+        showOutput("🤑 Profit = " + profit + " 🤑 \n" + "🤑 Profit Percentage = " + profitPerc + "% 🤑", "PROFIT");
     } else if(current < initial) {
         var loss = (initial - current) * quantity;
-        var lossPerc = (loss/initial) * 100;
-        showOutput("Loss = " + loss + "\n" + "Loss Percentage = " + lossPerc + "%", "LOSS");
+        var lossPerc = Math.round((loss/initial) * 100);
+        showOutput("😰 Loss = " + loss + " 😰 \n" + "😰 Loss Percentage = " + lossPerc + "% 😰", "LOSS");
     } else {
-        showOutput("No pain no gain and no gain no pain, you neither made any profit nor any loss", "EQUAL");
+        showOutput("👍🏻 No pain no gain and no gain no pain, you neither made any profit nor any loss 👍🏻", "EQUAL");
     }
 
 }
